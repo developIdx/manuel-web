@@ -1,6 +1,112 @@
 (() => {
   "use strict";
 
+  // Visor a pantalla completa con carrusel para las imágenes de la página.
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Visor de imágenes");
+  lightbox.innerHTML = `
+    <button class="lb-btn lb-close" type="button" aria-label="Cerrar">&times;</button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Anterior">&#8249;</button>
+    <button class="lb-btn lb-next" type="button" aria-label="Siguiente">&#8250;</button>
+    <div class="lb-track"></div>
+    <div class="lb-caption"><span class="lb-count"></span></div>`;
+  document.body.append(lightbox);
+  const track = lightbox.querySelector(".lb-track");
+  const count = lightbox.querySelector(".lb-count");
+  let sources = [];
+  let current = 0;
+  let isOpen = false;
+
+  function show(i, animate = true) {
+    const n = sources.length;
+    current = (i + n) % n;
+    track.style.transition = animate ? "" : "none";
+    track.style.transform = `translateX(${-current * 100}%)`;
+    [current - 1, current, current + 1].forEach((k) => {
+      const img = track.children[(k + n) % n]?.firstChild;
+      if (img && !img.getAttribute("src")) img.src = img.dataset.src;
+    });
+    count.textContent = `${String(current + 1).padStart(2, "0")} / ${String(n).padStart(2, "0")}`;
+  }
+
+  function open(index) {
+    const imgs = [
+      ...document.querySelectorAll(
+        ".card-page-grid-item img, .card-page-origin-visual img",
+      ),
+    ];
+    sources = imgs.map((img) => [img.currentSrc || img.src, img.alt]);
+    track.replaceChildren(
+      ...sources.map(([src, alt]) => {
+        const slide = document.createElement("div");
+        slide.className = "lb-slide";
+        const img = document.createElement("img");
+        img.alt = alt;
+        img.dataset.src = src;
+        slide.append(img);
+        return slide;
+      }),
+    );
+    isOpen = true;
+    lightbox.classList.add("visible");
+    document.body.style.overflow = "hidden";
+    show(index, false);
+    lightbox.querySelector(".lb-close").focus();
+  }
+
+  function close() {
+    isOpen = false;
+    lightbox.classList.remove("visible");
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", (event) => {
+    const img = event.target.closest?.(
+      ".card-page-grid-item img, .card-page-origin-visual img",
+    );
+    if (!img) return;
+    const all = [
+      ...document.querySelectorAll(
+        ".card-page-grid-item img, .card-page-origin-visual img",
+      ),
+    ];
+    open(all.indexOf(img));
+  });
+  lightbox.querySelector(".lb-close").addEventListener("click", close);
+  lightbox
+    .querySelector(".lb-prev")
+    .addEventListener("click", () => show(current - 1));
+  lightbox
+    .querySelector(".lb-next")
+    .addEventListener("click", () => show(current + 1));
+  track.addEventListener("click", (event) => {
+    if (event.target === track || event.target.classList.contains("lb-slide"))
+      close();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (!isOpen) return;
+    if (event.key === "Escape") close();
+    else if (event.key === "ArrowLeft") show(current - 1);
+    else if (event.key === "ArrowRight") show(current + 1);
+  });
+  let touchX = null;
+  lightbox.addEventListener(
+    "touchstart",
+    (event) => {
+      touchX = event.touches[0].clientX;
+    },
+    { passive: true },
+  );
+  lightbox.addEventListener("touchend", (event) => {
+    if (touchX === null) return;
+    const dx = event.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+  });
+
   const grid = document.querySelector(".card-page-grid");
   if (!grid) return;
 

@@ -142,12 +142,23 @@
       <button class="brand-button" type="button" aria-label="Logo BE">
         BE
       </button>
-      <button class="nav-button" type="button" aria-label="Ir a inicio">
-        Home
+      <button
+        class="burger-button"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span></span><span></span><span></span>
       </button>
-      <button class="nav-button" type="button" aria-label="Ir a contacto">
-        Contact
-      </button>
+      <div class="nav-menu" id="nav-menu">
+        <button class="nav-button" type="button" aria-label="Ir a inicio">
+          Home
+        </button>
+        <button class="nav-button" type="button" aria-label="Ir a contacto">
+          Contact
+        </button>
+      </div>
     </div>
     <canvas id="ambient-canvas" aria-hidden="true"></canvas>
     <div class="grain" aria-hidden="true"></div>

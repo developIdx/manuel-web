@@ -184,6 +184,7 @@
     lastScrollY = scrollY;
     progressBar.style.height = `${scrollProgress * 100}%`;
     intro.classList.toggle("hidden", scrollProgress > 0.012);
+    backToTopButton?.classList.toggle("is-hidden", scrollY < 40);
   }
   addEventListener("scroll", updateScroll, { passive: true });
   addEventListener("resize", resizeCanvas);
@@ -367,4 +368,22 @@
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+})();
+
+(() => {
+  const burger = document.querySelector(".burger-button");
+  const menu = document.querySelector("#nav-menu");
+  if (!burger || !menu) return;
+  const setOpen = (open) => {
+    menu.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  };
+  burger.addEventListener("click", () =>
+    setOpen(!menu.classList.contains("open")),
+  );
+  menu.addEventListener("click", () => setOpen(false));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
 })();
