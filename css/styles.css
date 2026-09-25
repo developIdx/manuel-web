@@ -81,6 +81,7 @@ body {
 }
 .nav-button {
   min-width: 116px;
+  text-decoration: none;
 }
 .brand-button:hover,
 .nav-button:hover {
@@ -842,6 +843,41 @@ h1 em {
   .card-page-description {
     grid-column: 1;
   }
+  .card-page:has(> .card-page-content:not(.card-page-origin-content)) {
+    align-content: start;
+    row-gap: 24px;
+    padding-bottom: 120px;
+  }
+  .card-page > .card-page-content:not(.card-page-origin-content) {
+    display: contents;
+  }
+  .card-page > .card-page-content:not(.card-page-origin-content) h1 {
+    order: 1;
+  }
+  .card-page > .card-page-grid {
+    order: 3;
+    margin-top: 0;
+  }
+  .card-page > .card-page-grid,
+  .movimiento-page .movimiento-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .card-page > .card-page-grid .card-page-grid-item {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .card-page > .card-page-content:not(.card-page-origin-content) .card-page-description {
+    order: 2;
+    justify-self: center;
+    text-align: center;
+  }
+  .card-page > .card-page-content:not(.card-page-origin-content) .card-page-back {
+    order: 4;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .scroll-cue i {
@@ -994,6 +1030,59 @@ h1 em {
     font-size: clamp(15px, 1.15vw, 17px);
     line-height: 1.95;
     white-space: normal;
+    column-count: 1;
+    column-rule: none;
+  }
+}
+
+/* Origen: maquetación móvil */
+@media (max-width: 900px) {
+  .card-page-origin-content {
+    width: 100%;
+    gap: 32px;
+  }
+  .card-page-origin-side {
+    gap: 22px;
+  }
+  .card-page-origin-visual {
+    width: min(64vw, 280px);
+  }
+  .card-page-profile-name {
+    font-size: 22px;
+  }
+  .card-page-profile-links a {
+    height: 38px;
+    padding: 0 14px;
+    font-size: 10px;
+  }
+  .card-page-origin-copy {
+    gap: 22px;
+    padding: 0 8px;
+  }
+  .card-page-origin-content .card-page-description {
+    max-width: none;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-align: center;
+    justify-self: stretch;
+  }
+  .card-page-origin-copy .card-page-essay {
+    width: 100%;
+    max-width: 60ch;
+    margin: 0 auto;
+    padding-bottom: 120px;
+    color: rgba(245, 245, 240, 0.82);
+    font-size: 15px;
+    line-height: 1.8;
+    letter-spacing: 0;
+    white-space: normal;
+    text-align: left;
+    hyphens: auto;
     column-count: 1;
     column-rule: none;
   }
