@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050505" />
+    <title>MANUEL RUIZ</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script id="card-data" type="application/json">
+      [
+        {
+          "title": "MANUEL RUIZ",
+          "description": "CONOCIMIENTO.",
+          "image": "img/logo%20manu.png",
+          "hoverImage": "img/logo%20manu.png"
+        },
+        {
+          "title": "VOUGUE",
+          "description": "La forma empieza a tomar cuerpo.",
+          "image": "img/5.jpg",
+          "hoverImage": "img/carta2.png"
+        },
+        {
+          "title": "CERO A CIEN",
+          "description": "Un espacio entre lo visible y lo imaginado.",
+          "image": "img/Proyecto (20251226051752).jpg",
+          "hoverImage": "img/cooper3.png"
+        },
+        {
+          "title": "NIKE",
+          "description": "Una línea que invita a seguir avanzando.",
+          "image": "img/NIÑA.png",
+          "hoverImage": "img/ferrari.png"
+        },
+        {
+          "title": "DUENDE",
+          "description": "Todo cambia, incluso cuando parece quieto.",
+          "image": "img/octubre-duende (1).png",
+          "hoverImage": "img/gatoposter.png"
+        },
+        {
+          "title": "ARTEMIS",
+          "description": "La estructura se encuentra con lo orgánico.",
+          "image": "img/artemissolo.png",
+          "hoverImage": "img/adidas.png"
+        },
+        {
+          "title": "CATA LA LATA",
+          "description": "Cada giro abre una nueva perspectiva.",
+          "image": "img/atun cata uno.png",
+          "hoverImage": "img/artemissolo.png"
+        },
+        {
+          "title": "CAMPAÑAS",
+          "description": "Una pausa antes del siguiente comienzo.",
+          "image": "img/MAR.jpg",
+          "hoverImage": "img/bad-city.png"
+        },
+        {
+          "title": "MUSA",
+          "description": "Las formas dejan una huella en el espacio.",
+          "image": "img/NURIA.jpg",
+          "hoverImage": "img/5.jpg"
+        },
+        {
+          "title": "ROLEX",
+          "description": "Cruzar el límite de lo conocido.",
+          "image": "img/ROLEX-22.png",
+          "hoverImage": "img/4.jpg"
+        },
+        {
+          "title": "IGLESIA",
+          "description": "Una parte contiene otra historia.",
+          "image": "img/NULL.jpg",
+          "hoverImage": "img/3.jpg"
+        },
+        {
+          "title": "EDITORIAL",
+          "description": "Cambiar el punto de vista lo transforma todo.",
+          "image": "img/AAFFilustración-portada-.jpg",
+          "hoverImage": "img/2.jpg"
+        },
+        {
+          "title": "ADIDAS",
+          "description": "Una imagen respira entre dos movimientos.",
+          "image": "img/adidas.png",
+          "hoverImage": "img/octubre-duende%20(1).png"
+        },
+        {
+          "title": "BUGATTI",
+          "description": "La repetición construye una cadencia.",
+          "image": "img/chiron-mod-2.png",
+          "hoverImage": "img/Proyecto%20(20250413084549).jpg"
+        },
+        {
+          "title": "JAGUAR",
+          "description": "La composición se estira hacia afuera.",
+          "image": "img/jaguar-render2.png",
+          "hoverImage": "img/prueba.jpg"
+        },
+        {
+          "title": "Reflejo",
+          "description": "Lo que vemos también nos devuelve la mirada.",
+          "image": "img/Proyecto%20(20251228060045).jpg",
+          "hoverImage": "img/prueba.jpg"
+        },
+        {
+          "title": "Umbral II",
+          "description": "Otra entrada, otra lectura del conjunto.",
+          "image": "img/Proyecto%20(20260321090956).jpg",
+          "hoverImage": "img/Proyecto%20(20260321090956).jpg"
+        },
+        {
+          "title": "Elevación",
+          "description": "La torre se desarma en el aire.",
+          "image": "img/carta1.png",
+          "hoverImage": "img/carta1.png"
+        },
+        {
+          "title": "Memoria",
+          "description": "Cada tarjeta conserva algo del recorrido.",
+          "image": "img/carta2.png",
+          "hoverImage": "img/carta2.png"
+        },
+        {
+          "title": "Reinicio",
+          "description": "El círculo vuelve al origen.",
+          "image": "img/cooper3.png",
+          "hoverImage": "img/cooper3.png"
+        }
+      ]
+    </script>
+    <script>
+      window.BABEL_CARDS = JSON.parse(
+        document.querySelector("#card-data").textContent,
+      );
+    </script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="top-bar" aria-label="Navegación principal">
+      <button class="brand-button" type="button" aria-label="Logo BE">
+        BE
+      </button>
+      <button class="nav-button" type="button" aria-label="Ir a inicio">
+        Home
+      </button>
+      <button class="nav-button" type="button" aria-label="Ir a contacto">
+        Contact
+      </button>
+    </div>
+    <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true">
+      <span id="progress-bar"></span>
+    </div>
+
+    <main id="scroll-container">
+      <section class="stage">
+        <header class="intro" id="intro">
+          <p class="eyebrow">Archivo visual · 001—020</p>
+          <h1>
+            MANUEL
+            <br />
+            <em>RUIZ ROSELL</em>
+          </h1>
+          <p class="intro-copy">Veinte fragmentos. Un movimiento continuo.</p>
+          <span class="scroll-cue">
+            <i></i>
+            Desplázate para explorar
+          </span>
+        </header>
+        <div
+          class="orbit"
+          id="orbit"
+          aria-label="Galería circular de imágenes"
+        ></div>
+        <div class="counter" aria-live="polite">
+          <span id="current-number">01</span>
+          <b>/</b>
+          <span>20</span>
+        </div>
+      </section>
+    </main>
+    <button class="back-to-top" type="button" aria-label="Volver al inicio">
+      BACK TO TOP
+    </button>
+  </body>
+</html>
