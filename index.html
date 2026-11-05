@@ -4,138 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#050505" />
-    <title>MANUEL RUIZ</title>
+    <meta name="description" content="Portfolio de Manuel Ruiz Rosell: ilustración, modelado 3D y packaging." />
+    <title>Manuel Ruiz Rosell — Ilustración · 3D · Packaging</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <script id="card-data" type="application/json">
-      [
-        {
-          "title": "MANUEL RUIZ",
-          "description": "CONOCIMIENTO.",
-          "image": "img/logo%20manu.png",
-          "hoverImage": "img/logo%20manu.png"
-        },
-        {
-          "title": "VOGUE",
-          "description": "Editorial.",
-          "image": "img/5.jpg",
-          "hoverImage": "img/carta2.png"
-        },
-        {
-          "title": "CERO A CIEN",
-          "description": "Editorial.",
-          "image": "img/Proyecto (20251226051752).jpg",
-          "hoverImage": "img/cooper3.png"
-        },
-        {
-          "title": "NIKE",
-          "description": "Artículo.",
-          "image": "img/NIÑA.png",
-          "hoverImage": "img/ferrari.png"
-        },
-        {
-          "title": "DUENDE",
-          "description": "Calendario.",
-          "image": "img/octubre-duende (1).png",
-          "hoverImage": "img/gatoposter.png"
-        },
-        {
-          "title": "ARTEMIS",
-          "description": "Artículo.",
-          "image": "img/artemissolo.png",
-          "hoverImage": "img/adidas.png"
-        },
-        {
-          "title": "CATA LA LATA",
-          "description": "Packaging.",
-          "image": "img/atun cata uno.png",
-          "hoverImage": "img/artemissolo.png"
-        },
-        {
-          "title": "CAMPAÑAS",
-          "description": "Publicidad.",
-          "image": "img/MAR.jpg",
-          "hoverImage": "img/bad-city.png"
-        },
-        {
-          "title": "MUSA",
-          "description": "Etiquetas.",
-          "image": "img/NURIA.jpg",
-          "hoverImage": "img/5.jpg"
-        },
-        {
-          "title": "ROLEX",
-          "description": "Publicidad.",
-          "image": "img/ROLEX-22.png",
-          "hoverImage": "img/4.jpg"
-        },
-        {
-          "title": "IGLESIA",
-          "description": "Editorial.",
-          "image": "img/NULL.jpg",
-          "hoverImage": "img/3.jpg"
-        },
-        {
-          "title": "Ediciones Fey",
-          "description": "Editorial.",
-          "image": "img/AAFFilustración-portada-.jpg",
-          "hoverImage": "img/2.jpg"
-        },
-        {
-          "title": "ADIDAS",
-          "description": "Publicidad.",
-          "image": "img/adidas.png",
-          "hoverImage": "img/octubre-duende%20(1).png"
-        },
-        {
-          "title": "BUGATTI",
-          "description": "Modelado 3D.",
-          "image": "img/chiron-mod-2.png",
-          "hoverImage": "img/Proyecto%20(20250413084549).jpg"
-        },
-        {
-          "title": "JAGUAR",
-          "description": "Modelado 3D.",
-          "image": "img/jaguar-render2.png",
-          "hoverImage": "img/prueba.jpg"
-        },
-        {
-          "title": "AÑO NUEVO",
-          "description": "Editorial.",
-          "image": "img/cara-cabra.png",
-          "hoverImage": "img/prueba.jpg"
-        },
-        {
-          "title": "LE MANS",
-          "description": "Editorial.",
-          "image": "img/aura.jpg",
-          "hoverImage": "img/Proyecto%20(20260321090956).jpg"
-        },
-        {
-          "title": "ALBÚM",
-          "description": "Editorial.",
-          "image": "img/jimi-1.jpg",
-          "hoverImage": "img/carta1.png"
-        },
-        {
-          "title": "LADA 1500",
-          "description": "Modelado 3D.",
-          "image": "img/lada-3-tfg.png",
-          "hoverImage": "img/carta2.png"
-        },
-        {
-          "title": "FANTA",
-          "description": "Publicidad.",
-          "image": "img/lata.jpg",
-          "hoverImage": "img/cooper3.png"
-        }
-      ]
-    </script>
-    <script>
-      window.BABEL_CARDS = JSON.parse(
-        document.querySelector("#card-data").textContent,
-      );
-    </script>
-    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/home.css" />
+    <script src="js/home.js" defer></script>
   </head>
   <body>
     <div class="top-bar" aria-label="Navegación principal">
@@ -148,6 +21,7 @@
       >
         BE
       </a>
+      <a class="brand-name" href="index.html">Manuel Ruiz Rosell</a>
       <button
         class="burger-button"
         type="button"
@@ -160,50 +34,153 @@
         <span></span>
       </button>
       <div class="nav-menu" id="nav-menu">
-        <a
-          class="nav-button"
-          href="tarjetas/01-origen.html"
-          aria-label="Ir a inicio"
-        >
-          Contact
+        <a class="nav-link" href="#ilustracion">Ilustración</a>
+        <a class="nav-link" href="#3d">Modelado 3D</a>
+        <a class="nav-link" href="#packaging">Packaging</a>
+        <a class="nav-button nav-banner" href="tarjetas/01-origen.html">
+          Sobre mí <span aria-hidden="true">→</span>
         </a>
       </div>
     </div>
     <canvas id="ambient-canvas" aria-hidden="true"></canvas>
     <div class="grain" aria-hidden="true"></div>
-    <div class="progress" aria-hidden="true">
-      <span id="progress-bar"></span>
-    </div>
 
-    <main id="scroll-container">
-      <section class="stage">
-        <header class="intro" id="intro">
-          <p class="eyebrow">Archivo visual · 001—020</p>
-          <h1>
-            MANUEL
-            <br />
-            <em>RUIZ ROSELL</em>
-          </h1>
-          <p class="intro-copy">Veinte fragmentos. Un movimiento continuo.</p>
-          <span class="scroll-cue">
-            <i></i>
-            Desplázate para explorar
-          </span>
+    <header class="home-hero">
+      <p class="eyebrow">Portfolio · Diseño gráfico · 3D · Ilustración</p>
+      <h1>
+        MANUEL
+        <br />
+        <em>RUIZ ROSELL</em>
+      </h1>
+    </header>
+
+    <nav class="tabs" aria-label="Categorías del portfolio">
+      <div class="tabs-inner">
+        <a href="#ilustracion"><span>01</span>Ilustración<sup>13</sup></a>
+        <a href="#3d"><span>02</span>Modelado 3D<sup>3</sup></a>
+        <a href="#packaging"><span>03</span>Packaging<sup>3</sup></a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="work" id="ilustracion" aria-labelledby="h-ilustracion">
+        <header class="work-head">
+          <span class="work-num">01</span>
+          <h2 id="h-ilustracion">Ilustración</h2>
+          <p>Editorial, publicidad y retrato. Dibujo digital con intención.</p>
+          <span class="work-count">13 proyectos</span>
         </header>
-        <div
-          class="orbit"
-          id="orbit"
-          aria-label="Galería circular de imágenes"
-        ></div>
-        <div class="counter" aria-live="polite">
-          <span id="current-number">01</span>
-          <b>/</b>
-          <span>20</span>
+        <div class="grid grid-ilustracion">
+          <a class="tile" id="card-02" href="tarjetas/02-materia.html">
+            <img src="img/thumbs/02.jpg" width="900" height="1211" alt="VOGUE" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>VOGUE</b><i>Editorial</i></span>
+          </a>
+          <a class="tile" id="card-03" href="tarjetas/03-vacio.html">
+            <img src="img/thumbs/03.jpg" width="900" height="1371" alt="CERO A CIEN" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>CERO A CIEN</b><i>Editorial</i></span>
+          </a>
+          <a class="tile" id="card-04" href="tarjetas/04-horizonte.html">
+            <img src="img/thumbs/04.jpg" width="900" height="567" alt="NIKE" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>NIKE</b><i>Artículo</i></span>
+          </a>
+          <a class="tile" id="card-05" href="tarjetas/05-movimiento.html">
+            <img src="img/thumbs/05.jpg" width="900" height="900" alt="DUENDE" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>DUENDE</b><i>Calendario</i></span>
+          </a>
+          <a class="tile" id="card-06" href="tarjetas/06-naturaleza.html">
+            <img src="img/thumbs/06.jpg" width="900" height="900" alt="ARTEMIS" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>ARTEMIS</b><i>Artículo</i></span>
+          </a>
+          <a class="tile" id="card-08" href="tarjetas/08-destino.html">
+            <img src="img/thumbs/08.jpg" width="900" height="1522" alt="CAMPAÑAS" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>CAMPAÑAS</b><i>Publicidad</i></span>
+          </a>
+          <a class="tile" id="card-10" href="tarjetas/10-umbral.html">
+            <img src="img/thumbs/10.jpg" width="900" height="630" alt="ROLEX" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>ROLEX</b><i>Publicidad</i></span>
+          </a>
+          <a class="tile" id="card-11" href="tarjetas/11-fragmento.html">
+            <img src="img/thumbs/11.jpg" width="900" height="1200" alt="IGLESIA" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>IGLESIA</b><i>Editorial</i></span>
+          </a>
+          <a class="tile" id="card-12" href="tarjetas/12-perspectiva.html">
+            <img src="img/thumbs/12.jpg" width="900" height="1303" alt="EDICIONES FEY" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>EDICIONES FEY</b><i>Editorial</i></span>
+          </a>
+          <a class="tile" id="card-13" href="tarjetas/13-silencio.html">
+            <img src="img/thumbs/13.jpg" width="900" height="1272" alt="ADIDAS" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>ADIDAS</b><i>Publicidad</i></span>
+          </a>
+          <a class="tile" id="card-16" href="tarjetas/16-reflejo.html">
+            <img src="img/thumbs/16.jpg" width="900" height="900" alt="AÑO NUEVO" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>AÑO NUEVO</b><i>Ilustración</i></span>
+          </a>
+          <a class="tile" id="card-17" href="tarjetas/17-umbral-ii.html">
+            <img src="img/thumbs/17.jpg" width="900" height="1394" alt="LE MANS" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>LE MANS</b><i>Editorial</i></span>
+          </a>
+          <a class="tile" id="card-18" href="tarjetas/18-elevacion.html">
+            <img src="img/thumbs/18.jpg" width="900" height="900" alt="ALBÚM" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>ALBÚM</b><i>Editorial</i></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="work" id="3d" aria-labelledby="h-3d">
+        <header class="work-head">
+          <span class="work-num">02</span>
+          <h2 id="h-3d">Modelado 3D</h2>
+          <p>Cinema 4D: modelado, iluminación y render de producto.</p>
+          <span class="work-count">03 proyectos</span>
+        </header>
+        <div class="grid grid-3d">
+          <a class="tile" id="card-14" href="tarjetas/14-ritmo.html">
+            <img src="img/thumbs/14.jpg" width="900" height="900" alt="BUGATTI" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>BUGATTI</b><i>Modelado 3D</i></span>
+          </a>
+          <a class="tile" id="card-15" href="tarjetas/15-limite.html">
+            <img src="img/thumbs/15.jpg" width="900" height="900" alt="JAGUAR" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>JAGUAR</b><i>Modelado 3D</i></span>
+          </a>
+          <a class="tile" id="card-19" href="tarjetas/19-memoria.html">
+            <img src="img/thumbs/19.jpg" width="900" height="496" alt="LADA 1500" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>LADA 1500</b><i>Modelado 3D</i></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="work" id="packaging" aria-labelledby="h-packaging">
+        <header class="work-head">
+          <span class="work-num">03</span>
+          <h2 id="h-packaging">Packaging</h2>
+          <p>Envases, etiquetas y su puesta en escena.</p>
+          <span class="work-count">03 proyectos</span>
+        </header>
+        <div class="grid grid-packaging">
+          <a class="tile" id="card-07" href="tarjetas/07-ascenso.html">
+            <img src="img/thumbs/07.jpg" width="900" height="564" alt="CATA LA LATA" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>CATA LA LATA</b><i>Packaging</i></span>
+          </a>
+          <a class="tile" id="card-09" href="tarjetas/09-ecos.html">
+            <img src="img/thumbs/09.jpg" width="900" height="1391" alt="MUSA" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>MUSA</b><i>Etiquetas</i></span>
+          </a>
+          <a class="tile" id="card-20" href="tarjetas/20-reinicio.html">
+            <img src="img/thumbs/20.jpg" width="900" height="506" alt="FANTA" loading="lazy" decoding="async" />
+            <span class="tile-cap"><b>FANTA</b><i>Publicidad</i></span>
+          </a>
         </div>
       </section>
     </main>
-    <button class="back-to-top" type="button" aria-label="Volver al inicio">
-      BACK TO TOP
-    </button>
+
+    <footer class="foot">
+      <p>¿Trabajamos juntos?</p>
+      <ul>
+        <li><a href="tarjetas/01-origen.html">Sobre mí</a></li>
+        <li><a href="https://www.behance.net/manuelruizro2" target="_blank" rel="noopener noreferrer">Behance</a></li>
+        <li><a href="https://www.linkedin.com/in/manuel-alejandro-ruiz-rosell-7b5280335/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/manuel_rll/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+    </footer>
   </body>
 </html>

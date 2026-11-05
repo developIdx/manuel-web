@@ -1,0 +1,55 @@
+/* Sobre mí: mismo lenguaje que la home (negro, Manrope, DM Mono, grano, formas de fondo). */
+.about {
+  position: relative; z-index: 2; display: grid; grid-template-columns: minmax(260px, 380px) minmax(0, 640px);
+  justify-content: center; gap: clamp(40px, 8vw, 120px); align-items: start;
+  width: min(94vw, 1200px); margin: 0 auto; padding: 130px 0 120px;
+}
+.about-side { position: sticky; top: 100px; display: grid; gap: 14px; justify-items: start; }
+.about-photo { width: 100%; margin: 0; cursor: zoom-in; border-radius: 4px; box-shadow: none; aspect-ratio: 1; }
+.about-name { margin: 10px 0 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+.about-role { margin: -6px 0 6px; color: var(--muted); font: 11px "DM Mono", monospace; letter-spacing: 0.18em; text-transform: uppercase; }
+.about-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.about-links a, .about-cta {
+  display: inline-flex; align-items: center; height: 40px; padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.26); border-radius: 999px; color: #fff; text-decoration: none;
+  font: 700 11px "DM Mono", monospace; letter-spacing: 0.16em; text-transform: uppercase;
+  transition: border-color 0.2s, background 0.2s;
+}
+.about-links a:hover, .about-cta:hover { border-color: rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.06); }
+
+.about-body .eyebrow { margin: 0 0 20px; }
+.about-body h1 { font-size: clamp(56px, 9vw, 120px); }
+.about-lead { margin: 36px 0 0; font-size: clamp(17px, 1.7vw, 21px); line-height: 1.6; color: #e6e6e1; }
+
+.about-block { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); }
+.about-block h2 { margin: 0 0 18px; color: var(--muted); font: 11px "DM Mono", monospace; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 400; }
+.about-block p { margin: 18px 0 0; max-width: 60ch; color: rgba(245, 245, 240, 0.8); font-size: 14px; line-height: 1.85; }
+
+.about-areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.about-areas a {
+  display: grid; gap: 22px; padding: 14px; height: 100%; border: 1px solid var(--line); border-radius: 4px;
+  color: #fff; text-decoration: none; font-weight: 800; font-size: 17px; letter-spacing: -0.03em; text-transform: uppercase;
+  transition: border-color 0.2s, background 0.2s;
+}
+.about-areas a span { color: var(--muted); font: 11px "DM Mono", monospace; letter-spacing: 0.18em; font-weight: 400; }
+.about-areas a:hover { border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.04); }
+
+.about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.about-tags li { padding: 8px 14px; border: 1px solid rgba(255, 255, 255, 0.26); border-radius: 999px; font: 700 11px "DM Mono", monospace; letter-spacing: 0.16em; text-transform: uppercase; }
+
+.about-timeline { margin: 0; padding: 0; list-style: none; }
+.about-timeline li { display: grid; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.about-timeline li:first-child { padding-top: 0; }
+.about-timeline b { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+.about-timeline span { color: #c2c2bd; font-size: 14px; line-height: 1.6; }
+
+.about-close { margin: 56px 0 28px; max-width: 52ch; font-size: clamp(18px, 2vw, 24px); line-height: 1.5; letter-spacing: -0.01em; color: #fff; }
+.about-cta { height: 52px; padding: 0 22px; border-radius: 12px; }
+
+@media (max-width: 860px) {
+  .about { grid-template-columns: minmax(0, 1fr); width: min(92vw, 640px); padding: 110px 0 90px; gap: 44px; }
+  .about-side { position: static; justify-items: center; text-align: center; }
+  .about-photo { width: min(70vw, 340px); }
+  .about-links { justify-content: center; }
+}
+@media (max-width: 480px) { .about-areas { grid-template-columns: 1fr; } }

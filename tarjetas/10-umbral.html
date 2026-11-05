@@ -3,28 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Umbral — Torre de Babel</title>
+    <meta name="theme-color" content="#050505" />
+    <title>ROLEX — Manuel Ruiz Rosell</title>
     <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-  <body class="card-page">
-    <main class="card-page-content">
-      <h1>ROLEX</h1>
-      <p class="card-page-description">Publicidad.</p>
-      <a class="card-page-back" href="../index.html#card-10">
-        Volver a la galería
-      </a>
-    </main>
-    <section
-      class="card-page-grid"
-      aria-label="Archivo visual relacionado"
-    ></section>
-    <script>
-      window.BABEL_CARD_IMAGES = [
-        "../img/sinletrarolex.png",
-        "../img/rolex-4.png",
-        "../img/ROLEX-22.png",
-      ];
-    </script>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <script src="../js/home.js" defer></script>
     <script src="../js/detail.js" defer></script>
+  </head>
+  <body>
+    <div class="top-bar" aria-label="Navegación principal">
+      <a class="brand-button" href="https://www.behance.net/manuelruizro2" aria-label="Behance de Manuel Ruiz" target="_blank" rel="noopener noreferrer">BE</a>
+      <a class="brand-name" href="../index.html">Manuel Ruiz Rosell</a>
+      <button class="burger-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <a class="nav-link is-active" href="../index.html#ilustracion">Ilustración</a>
+        <a class="nav-link" href="../index.html#3d">Modelado 3D</a>
+        <a class="nav-link" href="../index.html#packaging">Packaging</a>
+        <a class="nav-button nav-banner" href="01-origen.html">
+          Sobre mí <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+    <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main class="project">
+      <header class="project-head">
+        <p class="eyebrow"><a href="../index.html#ilustracion">Ilustración</a> · 10</p>
+        <h1>ROLEX</h1>
+        <p class="project-desc">Publicidad.</p>
+      </header>
+
+      <section class="project-grid project-grid-3" aria-label="Imágenes del proyecto">
+        <figure class="card-page-grid-item">
+          <img src="../img/work/10-1.jpg" width="1600" height="1120" alt="ROLEX — imagen 1" loading="eager" decoding="async" />
+        </figure>
+        <figure class="card-page-grid-item">
+          <img src="../img/work/10-2.jpg" width="1600" height="1600" alt="ROLEX — imagen 2" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="card-page-grid-item">
+          <img src="../img/work/10-3.jpg" width="1600" height="1120" alt="ROLEX — imagen 3" loading="lazy" decoding="async" />
+        </figure>
+      </section>
+
+      <nav class="project-nav" aria-label="Proyectos de Ilustración">
+        <a class="project-prev" href="08-destino.html"><span>← Anterior</span><b>CAMPAÑAS</b></a>
+        <a class="project-all" href="../index.html#ilustracion">Todo Ilustración</a>
+        <a class="project-next" href="11-fragmento.html"><span>Siguiente →</span><b>IGLESIA</b></a>
+      </nav>
+    </main>
   </body>
 </html>
