@@ -72,7 +72,7 @@ main { position: relative; z-index: 2; }
   .nav-banner { min-width: 0; }
 }
 @media (max-width: 480px) { .grid { columns: 1; } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .tile img { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .brand-name { transition: none !important; } html { scroll-behavior: auto; } .tile img { transition: none; } }
 
 /* Navegación de escritorio: cabecera completa en lugar de botones flotantes. */
 .brand-name, .nav-link { display: none; }
@@ -122,7 +122,11 @@ main { position: relative; z-index: 2; }
   .brand-name {
     display: block; min-width: 0; color: #fff; text-decoration: none; font-weight: 800; font-size: 14px;
     letter-spacing: -0.03em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    position: absolute; top: 50%; left: 72px; max-width: calc(100% - 144px);
+    transform: translate(0, -50%);
+    transition: left 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
+  .top-bar.is-scrolled .brand-name, body:not(:has(.tabs)) .brand-name { left: 50%; transform: translate(-50%, -50%); }
   .burger-button { margin-left: auto; }
   .nav-menu {
     top: 68px; left: 0; right: 0; min-width: 0; gap: 0; padding: 8px 16px 16px;

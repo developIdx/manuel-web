@@ -65,6 +65,17 @@
   links.forEach((a) => a.addEventListener("click", () => setActive(a.hash.slice(1))));
   updateActive();
 
+  // Móvil: cuando las pestañas quedan fijas, el nombre se centra en la cabecera.
+  const topBar = document.querySelector(".top-bar");
+  const tabsEl = document.querySelector(".tabs");
+  function updateBrand() {
+    const stuck = tabsEl && tabsEl.getBoundingClientRect().top <= topBar.offsetHeight + 1;
+    topBar.classList.toggle("is-scrolled", !!stuck);
+  }
+  addEventListener("scroll", updateBrand, { passive: true });
+  addEventListener("resize", updateBrand);
+  updateBrand();
+
   // Menú móvil.
   const burger = document.querySelector(".burger-button");
   const menu = document.querySelector("#nav-menu");
